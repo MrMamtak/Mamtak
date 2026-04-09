@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mamtak Levi personal website. Java, HTML, CSS, JS, and Minecraft plugin/mod development.">
   <title>Mamtak Levi</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="profile-card">
-    <section class="hero" data-reveal>
+  <main class="site-shell">
+    <section class="panel hero" data-reveal>
       <img class="avatar" src="assets/profile.png" alt="Mamtak profile picture">
       <div class="hero-text">
         <p class="eyebrow">Minecraft Plugins & Mods</p>
@@ -17,47 +18,87 @@
         <p class="intro">
           I love coding in Java, HTML, CSS, and JavaScript. I build Minecraft plugins and mods for fun.
         </p>
+        <ul class="chips">
+          <li>Java</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Minecraft Plugins</li>
+          <li>Minecraft Mods</li>
+        </ul>
       </div>
     </section>
 
-    <section data-reveal>
-      <h2>What I Build With</h2>
-      <ul class="chips">
-        <li>Java</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Minecraft Plugins</li>
-        <li>Minecraft Mods</li>
-      </ul>
-    </section>
+    <div class="layout-grid">
+      <section class="panel discord-panel" data-reveal>
+        <h2>Discord</h2>
+        <p class="discord-note">If you run into an issue or want something built, add me on Discord.</p>
+        <div class="discord-card">
+          <span class="discord-label">Username</span>
+          <p id="discordName" class="discord-name">mamtak</p>
+          <button id="copyDiscord" class="discord-copy-btn" type="button">Copy Discord Username</button>
+          <p id="copyMessage" aria-live="polite"></p>
+        </div>
+      </section>
 
-    <section data-reveal>
-      <h2>Find Me Online</h2>
-      <div class="link-grid">
-        <a class="link-card" href="https://github.com/MrMamtak" target="_blank" rel="noopener noreferrer">
-          GitHub
-          <span>@MrMamtak</span>
-        </a>
-        <a class="link-card" href="https://mamtak.net" target="_blank" rel="noopener noreferrer">
-          Website
-          <span>mamtak.net</span>
-        </a>
-        <a class="link-card" href="https://modrinth.com/user/Mamtak" target="_blank" rel="noopener noreferrer">
-          Modrinth
-          <span>Mamtak</span>
-        </a>
-      </div>
-    </section>
+      <section class="panel links-panel" data-reveal>
+        <h2>Find Me Online</h2>
+        <div class="link-grid">
+          <a class="link-card redirect-link" data-redirect-name="GitHub" href="https://github.com/MrMamtak" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <span>@MrMamtak</span>
+            <span class="redirect-label">Redirecting to github.com</span>
+          </a>
+          <a class="link-card redirect-link" data-redirect-name="mamtak.net" href="https://mamtak.net" target="_blank" rel="noopener noreferrer">
+            Website
+            <span>mamtak.net</span>
+            <span class="redirect-label">Redirecting to mamtak.net</span>
+          </a>
+          <a class="link-card redirect-link" data-redirect-name="Modrinth" href="https://modrinth.com/user/Mamtak" target="_blank" rel="noopener noreferrer">
+            Modrinth
+            <span>Mamtak</span>
+            <span class="redirect-label">Redirecting to modrinth.com</span>
+          </a>
+        </div>
+        <p id="navMessage" aria-live="polite"></p>
+      </section>
 
-    <section class="discord-box" data-reveal>
-      <h2>Discord</h2>
-      <p>Username: <code id="discordName">mamtak</code></p>
-      <button id="copyDiscord" type="button">Copy Username</button>
-      <p id="copyMessage" aria-live="polite"></p>
-    </section>
+      <section class="panel work-panel" data-reveal>
+        <h2>Contact & Current Work</h2>
+        <p>Currently working on: <strong>This website</strong></p>
+        <p>
+          Email:
+          <a class="text-link" href="mailto:mamtaklevi@gmail.com">mamtaklevi@gmail.com</a>
+        </p>
+      </section>
 
-    <footer>
+      <section class="panel modrinth-panel" data-reveal>
+        <h2>Modrinth</h2>
+        <p class="section-note">My Modrinth profile stats and best project.</p>
+        <div class="modrinth-stats">
+          <article class="stat-card">
+            <p class="stat-label">Projects</p>
+            <p class="stat-value">8</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Downloads</p>
+            <p class="stat-value">32.3K</p>
+          </article>
+        </div>
+
+        <h3>Best Modrinth Project</h3>
+        <a class="project-card redirect-link" data-redirect-name="TPA on Modrinth" href="https://modrinth.com/plugin/tpa-" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.modrinth.com/data/ymfeKMZx/3760f2ac71a8a6dfef833bc76ec4b7f878a58d25_96.webp" alt="TPA plugin icon from Modrinth">
+          <div>
+            <p class="project-title">TPA Plugin</p>
+            <p>A simple TPA plugin for Minecraft servers.</p>
+            <span class="redirect-label">Redirecting to modrinth.com/plugin/tpa-</span>
+          </div>
+        </a>
+      </section>
+    </div>
+
+    <footer class="footer">
       <p>&copy; <span id="year"></span> Mamtak Levi</p>
     </footer>
   </main>

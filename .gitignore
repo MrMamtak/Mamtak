@@ -1,34 +1,6 @@
-# Dependencies
-node_modules/
-
-# Build output
-dist/
-build/
-out/
-coverage/
-assets/
-
-# Environment files
-.env
-.env.*
-!.env.example
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# IDE and editor settings
-.idea/
-.vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.iml
-
-# OS files
-.DS_Store
-Thumbs.db
+# Keep only main website source files visible in Git
+*
+!.gitignore
+!index.html
+!style.css
+!script.js

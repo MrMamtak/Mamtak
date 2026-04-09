@@ -1,8 +1,8 @@
 :root {
   --bg-1: #050914;
   --bg-2: #0f1729;
-  --card: rgba(14, 23, 40, 0.86);
-  --stroke: rgba(156, 173, 199, 0.24);
+  --panel: rgba(14, 23, 40, 0.86);
+  --stroke: rgba(156, 173, 199, 0.22);
   --text: #f0f5ff;
   --muted: #a4b3cb;
   --accent: #ef4444;
@@ -18,23 +18,37 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
   color: var(--text);
   background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035) 0 14px,
+      transparent 14px 30px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(34, 211, 238, 0.02) 0 12px,
+      transparent 12px 28px
+    ),
     radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.15), transparent 36%),
     radial-gradient(circle at 90% 5%, rgba(239, 68, 68, 0.2), transparent 30%),
     linear-gradient(160deg, var(--bg-1), var(--bg-2));
   padding: 1.2rem;
 }
 
-.profile-card {
-  width: min(920px, 100%);
+.site-shell {
+  width: min(1460px, 100%);
   margin: 0 auto;
-  background: var(--card);
+}
+
+.panel {
+  background: var(--panel);
   border: 1px solid var(--stroke);
-  border-radius: 22px;
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
-  backdrop-filter: blur(6px);
-  padding: clamp(1.1rem, 2vw, 2rem);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  padding: clamp(0.95rem, 2vw, 1.25rem);
 }
 
 [data-reveal] {
@@ -57,20 +71,19 @@ body {
 
 .hero {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 1.2rem;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .avatar {
   width: 100%;
-  max-width: 140px;
+  max-width: 160px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 50%;
   border: 2px solid rgba(239, 68, 68, 0.75);
-  box-shadow: 0 10px 30px rgba(239, 68, 68, 0.28);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 .eyebrow {
@@ -83,11 +96,16 @@ body {
 
 h1 {
   margin: 0.35rem 0;
-  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  font-size: clamp(2.1rem, 5vw, 2.9rem);
 }
 
 h2 {
   margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+}
+
+h3 {
+  margin: 0.9rem 0 0.6rem;
   font-size: 1.08rem;
 }
 
@@ -97,12 +115,29 @@ h2 {
   max-width: 62ch;
 }
 
-section {
-  margin-top: 1.1rem;
+.layout-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1.35fr;
+  grid-template-areas:
+    "discord links modrinth"
+    "discord work modrinth";
+  column-gap: 1rem;
+  row-gap: 0.42rem;
+  align-items: start;
+}
+
+.links-panel {
+  grid-area: links;
+}
+
+.work-panel {
+  grid-area: work;
+  align-self: start;
 }
 
 .chips {
-  margin: 0;
+  margin: 0.75rem 0 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -116,7 +151,7 @@ section {
   border: 1px solid var(--stroke);
   border-radius: 999px;
   padding: 0.42rem 0.8rem;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
 }
 
 .link-grid {
@@ -132,7 +167,8 @@ section {
   border-radius: 14px;
   padding: 0.85rem;
   background: rgba(9, 16, 31, 0.65);
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.23);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
   display: block;
 }
 
@@ -140,63 +176,203 @@ section {
   display: block;
   margin-top: 0.3rem;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.94rem;
+}
+
+.redirect-label {
+  color: var(--accent-2);
+  font-size: 0.78rem;
 }
 
 .link-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(34, 211, 238, 0.7);
-  box-shadow: 0 10px 24px rgba(34, 211, 238, 0.12);
+  border-color: rgba(156, 173, 199, 0.45);
+  background-color: rgba(15, 24, 43, 0.72);
 }
 
-.discord-box p {
-  margin: 0;
+#navMessage {
+  margin-top: 0.55rem;
+  min-height: 1.2rem;
+  color: var(--accent-2);
+  font-size: 0.95rem;
+}
+
+.work-panel p {
+  margin: 0.25rem 0;
   color: var(--muted);
 }
 
-code {
-  background: rgba(34, 211, 238, 0.15);
+.text-link {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.discord-note {
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+}
+
+.discord-panel {
+  grid-area: discord;
+}
+
+.discord-card {
+  border: 1px dashed rgba(156, 173, 199, 0.35);
+  border-radius: 14px;
+  background: rgba(10, 18, 35, 0.62);
+  padding: 0.9rem;
+}
+
+.discord-label {
+  color: var(--muted);
+  font-size: 0.87rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.discord-name {
+  margin: 0.3rem 0 0.65rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modrinth-panel {
+  grid-area: modrinth;
+  min-height: 100%;
+}
+
+.section-note {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+.modrinth-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.stat-card {
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  background: rgba(9, 16, 31, 0.65);
+  padding: 0.8rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+.stat-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.stat-value {
+  margin: 0.24rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.8rem;
+  text-decoration: none;
   color: var(--text);
-  border-radius: 8px;
-  padding: 0.14rem 0.42rem;
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  background: rgba(9, 16, 31, 0.65);
+  padding: 0.85rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.23);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.project-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.project-card p {
+  margin: 0.32rem 0;
+  color: var(--muted);
+}
+
+.project-card:hover {
+  border-color: rgba(156, 173, 199, 0.45);
+  background-color: rgba(15, 24, 43, 0.72);
 }
 
 button {
-  margin-top: 0.7rem;
-  border: 1px solid transparent;
-  background: linear-gradient(135deg, #f87171, #ef4444);
+  margin-top: 0.25rem;
+  border: 1px solid rgba(14, 165, 233, 0.45);
+  background: #0284c7;
   color: #fff;
   border-radius: 10px;
-  padding: 0.6rem 0.95rem;
+  padding: 0.62rem 0.98rem;
   font: inherit;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.34);
+  transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(239, 68, 68, 0.32);
+  background-color: #0ea5e9;
+  border-color: rgba(56, 189, 248, 0.7);
+}
+
+.discord-copy-btn {
+  background: transparent;
+  border: 1px solid rgba(156, 173, 199, 0.5);
+  color: var(--text);
+  box-shadow: none;
+}
+
+.discord-copy-btn:hover {
+  background: transparent;
+  border-color: rgba(156, 173, 199, 0.8);
 }
 
 #copyMessage {
   min-height: 1.2rem;
-  margin-top: 0.5rem;
+  margin-top: 0.45rem;
   color: var(--accent-2);
 }
 
-footer {
-  margin-top: 1.1rem;
+.footer {
+  margin-top: 1rem;
   border-top: 1px solid var(--stroke);
-  padding-top: 0.8rem;
+  padding-top: 0.7rem;
   color: var(--muted);
   font-size: 0.9rem;
+  text-align: center;
 }
 
 @keyframes reveal {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 980px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "links"
+      "work"
+      "discord"
+      "modrinth";
+    row-gap: 1rem;
   }
 }
 
@@ -207,6 +383,19 @@ footer {
   }
 
   .link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .modrinth-stats {
     grid-template-columns: 1fr;
   }
 }
