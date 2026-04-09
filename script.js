@@ -4,7 +4,6 @@ const copyButton = document.getElementById("copyDiscord");
 const copyMessage = document.getElementById("copyMessage");
 const modrinthProjects = document.getElementById("modrinthProjects");
 const modrinthDownloads = document.getElementById("modrinthDownloads");
-const modrinthLiveStatus = document.getElementById("modrinthLiveStatus");
 const bestProjectLink = document.getElementById("bestProjectLink");
 const bestProjectImage = document.getElementById("bestProjectImage");
 const bestProjectTitle = document.getElementById("bestProjectTitle");
@@ -38,10 +37,6 @@ async function loadModrinthData() {
     return;
   }
 
-  if (modrinthLiveStatus) {
-    modrinthLiveStatus.textContent = "Loading live Modrinth data...";
-  }
-
   try {
     const response = await fetch("https://api.modrinth.com/v2/user/mamtak/projects", {
       headers: {
@@ -72,18 +67,7 @@ async function loadModrinthData() {
         bestProjectImage.alt = `${topProject.title} icon from Modrinth`;
       }
     }
-
-    if (modrinthLiveStatus) {
-      const now = new Date();
-      modrinthLiveStatus.textContent = `Live stats updated at ${now.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit"
-      })}.`;
-    }
   } catch (error) {
-    if (modrinthLiveStatus) {
-      modrinthLiveStatus.textContent = "Live Modrinth data is unavailable right now.";
-    }
     console.error("Failed to load Modrinth data:", error);
   }
 }
