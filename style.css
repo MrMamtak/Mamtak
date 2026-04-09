@@ -216,6 +216,12 @@ h3 {
   padding: 0.9rem;
 }
 
+.discord-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .discord-label {
   color: var(--muted);
   font-size: 0.87rem;
