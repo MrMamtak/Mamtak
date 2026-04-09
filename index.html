@@ -23,6 +23,7 @@
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
+          <li>Websites</li>
           <li>Minecraft Plugins</li>
           <li>Minecraft Mods</li>
         </ul>
@@ -44,23 +45,19 @@
       <section class="panel links-panel" data-reveal>
         <h2>Find Me Online</h2>
         <div class="link-grid">
-          <a class="link-card redirect-link" data-redirect-name="GitHub" href="https://github.com/MrMamtak" target="_blank" rel="noopener noreferrer">
+          <a class="link-card" href="https://github.com/MrMamtak" target="_blank" rel="noopener noreferrer">
             GitHub
             <span>@MrMamtak</span>
-            <span class="redirect-label">Redirecting to github.com</span>
           </a>
-          <a class="link-card redirect-link" data-redirect-name="mamtak.net" href="https://mamtak.net" target="_blank" rel="noopener noreferrer">
+          <a class="link-card" href="https://mamtak.net" target="_blank" rel="noopener noreferrer">
             Website
             <span>mamtak.net</span>
-            <span class="redirect-label">Redirecting to mamtak.net</span>
           </a>
-          <a class="link-card redirect-link" data-redirect-name="Modrinth" href="https://modrinth.com/user/Mamtak" target="_blank" rel="noopener noreferrer">
+          <a class="link-card" href="https://modrinth.com/user/Mamtak" target="_blank" rel="noopener noreferrer">
             Modrinth
             <span>Mamtak</span>
-            <span class="redirect-label">Redirecting to modrinth.com</span>
           </a>
         </div>
-        <p id="navMessage" aria-live="polite"></p>
       </section>
 
       <section class="panel work-panel" data-reveal>
@@ -75,24 +72,24 @@
       <section class="panel modrinth-panel" data-reveal>
         <h2>Modrinth</h2>
         <p class="section-note">My Modrinth profile stats and best project.</p>
+        <p id="modrinthLiveStatus" class="live-status" aria-live="polite"></p>
         <div class="modrinth-stats">
           <article class="stat-card">
             <p class="stat-label">Projects</p>
-            <p class="stat-value">8</p>
+            <p id="modrinthProjects" class="stat-value">8</p>
           </article>
           <article class="stat-card">
             <p class="stat-label">Downloads</p>
-            <p class="stat-value">32.3K</p>
+            <p id="modrinthDownloads" class="stat-value">32.3K</p>
           </article>
         </div>
 
         <h3>Best Modrinth Project</h3>
-        <a class="project-card redirect-link" data-redirect-name="TPA on Modrinth" href="https://modrinth.com/plugin/tpa-" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn.modrinth.com/data/ymfeKMZx/3760f2ac71a8a6dfef833bc76ec4b7f878a58d25_96.webp" alt="TPA plugin icon from Modrinth">
+        <a id="bestProjectLink" class="project-card" href="https://modrinth.com/plugin/tpa-" target="_blank" rel="noopener noreferrer">
+          <img id="bestProjectImage" src="https://cdn.modrinth.com/data/ymfeKMZx/3760f2ac71a8a6dfef833bc76ec4b7f878a58d25_96.webp" alt="TPA plugin icon from Modrinth">
           <div>
-            <p class="project-title">TPA Plugin</p>
-            <p>A simple TPA plugin for Minecraft servers.</p>
-            <span class="redirect-label">Redirecting to modrinth.com/plugin/tpa-</span>
+            <p id="bestProjectTitle" class="project-title">TPA Plugin</p>
+            <p id="bestProjectDescription">A simple TPA plugin for Minecraft servers.</p>
           </div>
         </a>
       </section>

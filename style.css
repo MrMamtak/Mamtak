@@ -39,7 +39,7 @@ body {
 }
 
 .site-shell {
-  width: min(1460px, 100%);
+  width: min(1560px, 100%);
   margin: 0 auto;
 }
 
@@ -118,7 +118,7 @@ h3 {
 .layout-grid {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1.8fr 1.35fr;
+  grid-template-columns: 0.95fr 2.4fr 1.25fr;
   grid-template-areas:
     "discord links modrinth"
     "discord work modrinth";
@@ -179,21 +179,9 @@ h3 {
   font-size: 0.94rem;
 }
 
-.redirect-label {
-  color: var(--accent-2);
-  font-size: 0.78rem;
-}
-
 .link-card:hover {
   border-color: rgba(156, 173, 199, 0.45);
   background-color: rgba(15, 24, 43, 0.72);
-}
-
-#navMessage {
-  margin-top: 0.55rem;
-  min-height: 1.2rem;
-  color: var(--accent-2);
-  font-size: 0.95rem;
 }
 
 .work-panel p {
@@ -247,6 +235,13 @@ h3 {
 .section-note {
   margin: 0 0 0.75rem;
   color: var(--muted);
+}
+
+.live-status {
+  margin: 0 0 0.7rem;
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  min-height: 1.1rem;
 }
 
 .modrinth-stats {
