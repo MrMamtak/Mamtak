@@ -116,8 +116,9 @@ h1 {
   margin-top: 0;
   border: 1px solid rgba(156, 173, 199, 0.34);
   border-radius: 16px;
-  background: rgba(9, 16, 31, 0.6);
+  background: transparent;
   padding: 0.66rem;
+  box-shadow: none;
 }
 
 .hero-sites-title {
@@ -178,11 +179,12 @@ h3 {
   display: grid;
   grid-template-columns: 0.95fr 2.4fr 1.25fr;
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .center-column {
   display: grid;
+  grid-template-rows: auto 1fr;
   gap: 0.42rem;
 }
 
@@ -264,7 +266,7 @@ h3 {
 }
 
 .discord-panel {
-  align-self: start;
+  align-self: stretch;
 }
 
 .discord-card {
