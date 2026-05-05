@@ -116,8 +116,9 @@ h1 {
   margin-top: 0;
   border: 1px solid rgba(156, 173, 199, 0.34);
   border-radius: 16px;
-  background: rgba(9, 16, 31, 0.6);
+  background: transparent;
   padding: 0.66rem;
+  box-shadow: none;
 }
 
 .hero-sites-title {
