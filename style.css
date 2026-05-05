@@ -178,11 +178,12 @@ h3 {
   display: grid;
   grid-template-columns: 0.95fr 2.4fr 1.25fr;
   gap: 1rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .center-column {
   display: grid;
+  grid-template-rows: auto 1fr;
   gap: 0.42rem;
 }
 
@@ -264,7 +265,7 @@ h3 {
 }
 
 .discord-panel {
-  align-self: start;
+  align-self: stretch;
 }
 
 .discord-card {
